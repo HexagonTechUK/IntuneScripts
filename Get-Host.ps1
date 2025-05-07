@@ -13,7 +13,7 @@
     {Write the output paths for the log file or message logs}
 
 .NOTES
-    File Name : {Get-HostName.ps1}  
+    File Name : Get-HostName.ps1  
     Author    : Paul Gosling, Hexagon Technology Services  
     Created   : 2025-05-06  
     Version   : 1.0 - Initial Script  
