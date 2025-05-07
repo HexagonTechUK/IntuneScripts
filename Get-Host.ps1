@@ -28,8 +28,8 @@
 #>
 
 # Variables (complete these):
-$deployType  = "Get"    #-----------------------------------------------# Deployment type: Install, Upgrade, Removal   
-$productName = "HostName"   #-----------------------------------------------# Application name or function for logfile   
+$deployType  = "Get"    #----------------------------------------------------------# Deployment type: Install, Upgrade, Removal   
+$productName = "HostName"   #------------------------------------------------------# Application name or function for logfile   
 $logFileName = Join-Path $env:ProgramData "_MEM\$deployType-$productName.log"  #---# Path to script logfile   
 
 # Create the log file if it doesn't exist
@@ -38,7 +38,7 @@ if (-not (Test-Path $logFileName)) {
 }
 
 # Function to log messages (to both file and Intune output)
-function Log-Message {
+function Write-Log {
     param (
         [string]$Message
     )
@@ -47,6 +47,6 @@ function Log-Message {
     Write-Output "$timestamp | $Message"
 }
 
-Log-Message $env:computername
+Write-Log $env:computername
 
 # End of script
