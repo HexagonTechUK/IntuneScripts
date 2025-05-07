@@ -1,15 +1,29 @@
-﻿<#
+<#
 .SYNOPSIS
-	PowerShell script to detect the presence of ODBC values.
+    Validates the presence and correctness of a specific ODBC DSN registry configuration.
 
 .DESCRIPTION
-	
-	This script detects the installation of ODBC settings.
+    This script checks whether the registry key 'HKLM:\SOFTWARE\ODBC\ODBC.INI\{dnsName}' exists,
+    and verifies that the 'Database' value matches a specified expected DSN name.
+    It is useful for confirming that an ODBC data source has been configured correctly
+    on the system.
+
+.PARAMETER dsnName
+    The expected value for the 'Database' registry entry under the specified ODBC key.
+
+.OUTPUTS
+    String messages indicating whether the ODBC values are present or missing.
 
 .NOTES
-    Author: Paul Gosling, Hexagon Tech
-    Last Edit: 2025/02/04
-    Version: 1.0
+   Paul Gosling, Hexagon Technology Services, 2025
+    Requires: PowerShell 5.1 or later, appropriate registry access permissions.
+
+.EXAMPLE
+    Run the script after replacing {dsnName} with the expected DSN value:
+    $dbValueName = "MyDataSource"
+
+    Example output:
+    "ODBC values present" or "ODBC values missing"
 #>
 
 # Define the registry path and value name
