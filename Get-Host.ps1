@@ -47,6 +47,7 @@ function Log-Message {
     Write-Output "$timestamp | $Message"
 }
 
-<# Insert Code Here #>
+Get-Host
+Log-Message
 
 # End of script
