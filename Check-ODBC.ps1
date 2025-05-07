@@ -15,8 +15,11 @@
     String messages indicating whether the ODBC values are present or missing.
 
 .NOTES
-   Paul Gosling, Hexagon Technology Services, 2025
-    Requires: PowerShell 5.1 or later, appropriate registry access permissions.
+    File Name : Check-OdbcDsn.ps1
+    Author    : Paul Gosling, Hexagon Technology Services
+    Created   : 2025-05-06
+    Version   : 1.0
+    Requires  : PowerShell 5.1 or later, appropriate registry access permissions.
 
 .EXAMPLE
     Run the script after replacing {dsnName} with the expected DSN value:
