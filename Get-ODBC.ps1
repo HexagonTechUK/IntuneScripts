@@ -15,7 +15,7 @@
     String messages indicating whether the ODBC values are present or missing.
 
 .NOTES
-    File Name : Check-OdbcDsn.ps1
+    File Name : Get-OdbcDsn.ps1
     Author    : Paul Gosling, Hexagon Technology Services
     Created   : 2025-05-06
     Version   : 1.0
