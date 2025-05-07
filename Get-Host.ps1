@@ -13,11 +13,11 @@
     {Write the output paths for the log file or message logs}
 
 .NOTES
-    File Name : {scriptName.ps1}  
+    File Name : {Get-HostName.ps1}  
     Author    : Paul Gosling, Hexagon Technology Services  
-    Created   : {YYYY-MM-DD}  
+    Created   : 2025-05-06  
     Version   : 1.0 - Initial Script  
-     Requires  : {Write any requirements or prerequisites for this script}  
+     Requires :  
 
 .EXAMPLE
     {Write and example value input and expected output for this script}   
@@ -28,9 +28,9 @@
 #>
 
 # Variables (complete these):
-$deployType  = "{deployType}"    #-----------------------------------------------# Deployment type: Install, Upgrade, Removal   
-$productName = "{productName}"   #-----------------------------------------------# Application name or function for logfile   
-$logFileName = Join-Path $env:ProgramData "PH\$deployType-$productName.log"  #---# Path to script logfile   
+$deployType  = "Get"    #-----------------------------------------------# Deployment type: Install, Upgrade, Removal   
+$productName = "HostName"   #-----------------------------------------------# Application name or function for logfile   
+$logFileName = Join-Path $env:ProgramData "_MEM\$deployType-$productName.log"  #---# Path to script logfile   
 
 # Create the log file if it doesn't exist
 if (-not (Test-Path $logFileName)) {
@@ -47,7 +47,6 @@ function Log-Message {
     Write-Output "$timestamp | $Message"
 }
 
-Get-Host
-Log-Message
+Log-Message $env:computername
 
 # End of script
